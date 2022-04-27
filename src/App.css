@@ -1,0 +1,20 @@
+.App {
+	text-align: center;
+}
+.list {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.img {
+	width: 200px;
+	height: 200px;
+  border-radius: 100px;
+}
+
+.list p{
+  margin: 15px;
+}
+.list h2{
+  margin: 15px;
+}
