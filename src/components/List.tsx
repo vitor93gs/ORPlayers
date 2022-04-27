@@ -10,20 +10,25 @@ interface IProps1 {
 }
 
 export const List: React.FC<IProps1> = ({ players }) => {
+
+	function Render(): JSX.Element[] {
+		return players.map((current, i) => {
+			return (
+				<li key={i} className="list">
+					<div>
+						<img src={current.url} alt="xpd" className="img" />
+						<h2>{current.name}</h2>
+					</div>
+
+					<p>{current.age} Years old</p>
+					<p>NOTE: {current.why}</p>
+				</li>
+			);
+		});
+	}
 	return (
 		<>
-			<ul>
-				{players.map((current, i) => {
-					return (
-						<li key={i} className="list">
-                            <img src={current.url} alt="xpd" className="img" />
-							<h2>{current.name}</h2>
-							<p>{current.age}</p>
-							<p>{current.why}</p>
-						</li>
-					);
-				})}
-			</ul>
+			<ul>{Render()}</ul>
 		</>
 	);
 };
